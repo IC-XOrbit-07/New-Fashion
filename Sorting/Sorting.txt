@@ -1,0 +1,87 @@
+1) Selection Sort Code
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main(){
+  vector<int>array{1,2,-12,0,237,-89458};
+  for(int i=0  ; i<array.size()-1 ; i++){
+    int midindex = i;
+    for(int j=i+1 ; j<array.size() ; j++){
+      if(array[j]<array[midindex]){
+        midindex=j;
+      }
+    }
+    swap(array[i],array[midindex]);
+  }
+  for(int i=0  ; i<array.size() ; i++){
+    cout<<array[i]<<" ";
+  }
+}
+
+Time Complexity :- O(n^2)
+Space Complexity :- O(1)
+
+---------------------------------------------
+
+// Bubble Sort Code
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+  vector<int>array{-34,23,-3297,0,-12,3};
+  int n= array.size();
+  for(int round =1 ; round<n ; round++){
+    for(int j=0 ; j<n-round ; j++){
+      if(array[j]>array[j+1]){
+        swap(array[j],array[j+1]);
+      }
+    }
+  }
+  for(int k=0 ; k<array.size() ; k++){
+    cout<<array[k]<<" "; 
+  }
+}
+
+Time Complexity :- O(n^2)
+Space Complexity :- O(1)
+
+---------------------------------------------
+
+// Optimised Bubble Sort Approach Code
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+  vector<int>array{-34,23,-3297,0,-12,3};
+  int n= array.size();
+  for(int round =1 ; round<n ; round++){
+    bool swapped = false;
+    for(int j=0 ; j<n-round ; j++){
+      if(array[j]>array[j+1]){
+        swapped = true;
+        swap(array[j],array[j+1]);
+      }
+    }
+    if(swapped == false){
+      break;
+    }
+  }
+  for(int k=0 ; k<array.size() ; k++){
+    cout<<array[k]<<" "; 
+  }
+}
+
+Time Complexity :- Depend may be O(n) {When the given array is already sorted - Best Case}.
+		   O(n^2) {Worst Case and Average Case}. 
+Space Complexity :- O(1).
+
+---------------------------------------------
+
+// Insertion Sort Code 
+
